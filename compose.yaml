@@ -1,0 +1,10 @@
+services:
+  cli-app:
+    build:
+      context: .
+    env_file:
+      - .env.local
+    volumes:
+      - .:/app
+    network_mode: host
+    entrypoint: [ "python", "main.py" ]

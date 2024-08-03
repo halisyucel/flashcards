@@ -1,7 +1,7 @@
 import json
 import os
+import sys
 
-import click
 import requests
 from dotenv import load_dotenv
 from openai import OpenAI
@@ -53,8 +53,6 @@ def format_translation(word: str, translation: str, examples: list[str]) -> (str
     )
 
 
-@click.command()
-@click.option("--word", prompt="enter a english word", help="word to generate examples")
 def main(word: str):
     response = client.chat.completions.create(
         model="gpt-4o-mini",
@@ -99,7 +97,7 @@ def main(word: str):
 
 
 def upload_card(word: str, translation: str, examples: list[str]):
-    anki_connect_url = "http://localhost:8765"
+    anki_connect_url = "http://host.docker.internal:8765"
 
     (front, back) = format_translation(word, translation, examples)
 
@@ -127,4 +125,12 @@ def upload_card(word: str, translation: str, examples: list[str]):
 
 
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) < 2:
+        print("please provide a word to translate. like 'make run WORD=word'")
+        sys.exit(1)
+
+    if sys.argv[1] == "default":
+        print("please provide a word to translate. like 'make run WORD=word'")
+        sys.exit(1)
+
+    main(sys.argv[1])
