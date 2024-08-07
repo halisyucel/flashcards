@@ -97,7 +97,7 @@ def main(word: str):
 
 
 def upload_card(word: str, translation: str, examples: list[str]):
-    anki_connect_url = "http://host.docker.internal:8765"
+    anki_connect_url = "http://localhost:8765"
 
     (front, back) = format_translation(word, translation, examples)
 

@@ -1,10 +1,4 @@
 WORD ?= default
 
 run:
-	docker compose run cli-app $(WORD) && make clean
-
-up:
-	docker compose up --build --remove-orphans
-
-clean:
-	docker compose down --remove-orphans
+	source ~/myenv/bin/activate && python3 main.py "$(WORD)" && deactivate
