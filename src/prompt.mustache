@@ -1,14 +1,16 @@
 - translate the word '{{ word }}' from English to Turkish
 - provide English dictionary definitions and example sentences with their corresponding Turkish meanings
-- use rich markdown formatting:
-  - highlight the target word in examples with bold (**word**)
-  - use italic for parts of speech (*n.*, *v.*, *adj.*)
-  - use blockquotes for additional usage notes
-  - use horizontal rules to separate sections
+- use rich HTML formatting:
+  - highlight the target word in examples with <strong>word</strong>
+  - use <em> for parts of speech (<em>n.</em>, <em>v.</em>, <em>adj.</em>)
+  - use <hr> to separate sections
+  - use <br> for line breaks
+  - use <ul style="text-align:left; margin-left:0; padding-left:20px;"> and <li> for lists of definitions and examples
+  - apply style="text-align:left;" to all content elements
   - use emoji indicators for different types of definitions (📝 main, 💡 figurative, etc.)
   - do not use any headers or section titles
 
-- based on this information, I want you to create two sections separated by horizontal rule (---):
+- based on this information, I want you to create two sections separated by horizontal rule (<hr>):
   - first section should contain the English word with its definitions
   - second section should contain translations and example sentences
 
@@ -19,130 +21,162 @@
 Example 1:
 Input word: "leverage"
 
-leverage (*n.*, *v.*)
+<div style="text-align:left;">
+leverage (<em>n.</em>, <em>v.</em>)<br>
 
-📝 **Main Definitions**
-- The use of borrowed capital for investment, expecting the profits to be greater than the interest payable
-- The power to influence a person or situation to achieve a particular outcome
-- To use something to maximum advantage
+<strong>Main Definitions</strong><br>
+<ul style="text-align:left; margin-left:0; padding-left:20px;">
+  <li>The use of borrowed capital for investment, expecting the profits to be greater than the interest payable</li>
+  <li>The power to influence a person or situation to achieve a particular outcome</li>
+  <li>To use something to maximum advantage</li>
+</ul>
 
-💡 **Figurative Usage**
-> Often used in business contexts to describe using existing resources or influence to gain an advantage
+<strong>Figurative Usage</strong><br>
+Often used in business contexts to describe using existing resources or influence to gain an advantage
 
----
+<hr>
 
-`kaldıraç gücü`, `nüfuz kullanmak`, `avantaja çevirmek`
+kaldıraç gücü, nüfuz kullanmak, avantaja çevirmek<br>
 
-- The company **leveraged** its market position to secure better deals
-  → (avantaja çevirmek)
-- She **leveraged** her connections in the industry to land the job
-  → (nüfuz kullanmak)
-- The financial institution was highly **leveraged** with risky investments
-  → (kaldıraç gücü)
-- We need to **leverage** our existing resources more efficiently
-  → (avantaja çevirmek)
-- The politician **leveraged** public sentiment to push for reforms
-  → (nüfuz kullanmak)
+<ul style="text-align:left; margin-left:0; padding-left:20px;">
+  <li>The company <strong>leveraged</strong> its market position to secure better deals
+    <br>→ (avantaja çevirmek)</li>
+  <li>She <strong>leveraged</strong> her connections in the industry to land the job
+    <br>→ (nüfuz kullanmak)</li>
+  <li>The financial institution was highly <strong>leveraged</strong> with risky investments
+    <br>→ (kaldıraç gücü)</li>
+  <li>We need to <strong>leverage</strong> our existing resources more efficiently
+    <br>→ (avantaja çevirmek)</li>
+  <li>The politician <strong>leveraged</strong> public sentiment to push for reforms
+    <br>→ (nüfuz kullanmak)</li>
+</ul>
+</div>
 
 Example 2:
 Input word: "encompass"
 
-encompass (*v.*)
+<div style="text-align:left;">
+encompass (<em>v.</em>)<br>
 
-📝 **Main Definitions**
-- To include completely or entirely within its scope
-- To surround or enclose completely
-- To comprehend or understand fully
+<strong>Main Definitions</strong><br>
+<ul style="text-align:left; margin-left:0; padding-left:20px;">
+  <li>To include completely or entirely within its scope</li>
+  <li>To surround or enclose completely</li>
+  <li>To comprehend or understand fully</li>
+</ul>
 
-> 💫 **Usage Note**: Often used in academic or formal contexts to describe comprehensive inclusion
+<strong>Usage Note</strong>: Often used in academic or formal contexts to describe comprehensive inclusion
 
----
+<hr>
 
-`kapsamak`, `içermek`, `kuşatmak`, `çevrelemek`
+kapsamak, içermek, kuşatmak, çevrelemek<br>
 
-- The new policy **encompasses** all aspects of workplace safety
-  → (kapsamak)
-- His research **encompasses** several different scientific disciplines
-  → (içermek)
-- The city walls once **encompassed** a much smaller area
-  → (çevrelemek)
-- Their business strategy **encompasses** both online and offline channels
-  → (kapsamak)
+<ul style="text-align:left; margin-left:0; padding-left:20px;">
+  <li>The new policy <strong>encompasses</strong> all aspects of workplace safety
+    <br>→ (kapsamak)</li>
+  <li>His research <strong>encompasses</strong> several different scientific disciplines
+    <br>→ (içermek)</li>
+  <li>The city walls once <strong>encompassed</strong> a much smaller area
+    <br>→ (çevrelemek)</li>
+  <li>Their business strategy <strong>encompasses</strong> both online and offline channels
+    <br>→ (kapsamak)</li>
+</ul>
+</div>
 
 Example 3:
 Input word: "profound"
 
-profound (*adj.*)
+<div style="text-align:left;">
+profound (<em>adj.</em>)<br>
 
-📝 **Primary Meanings**
-- Penetrating deeply into subjects or ideas
-- Having deep insight or understanding
+<strong>Primary Meanings</strong><br>
+<ul style="text-align:left; margin-left:0; padding-left:20px;">
+  <li>Penetrating deeply into subjects or ideas</li>
+  <li>Having deep insight or understanding</li>
+</ul>
 
-💡 **Extended Meanings**
-- Extending far below the surface
-- Felt or experienced very strongly or intensely
+<strong>Extended Meanings</strong><br>
+<ul style="text-align:left; margin-left:0; padding-left:20px;">
+  <li>Extending far below the surface</li>
+  <li>Felt or experienced very strongly or intensely</li>
+</ul>
 
-> 🎯 **Style Note**: Commonly used to emphasize exceptional depth or intensity
+<strong>Style Note</strong>: Commonly used to emphasize exceptional depth or intensity
 
----
+<hr>
 
-`derin`, `köklü`, `çok yoğun`, `derin anlamlı`
+derin, köklü, çok yoğun, derin anlamlı<br>
 
-- The discovery had **profound** implications for modern physics
-  → (köklü)
-- She felt a **profound** sense of loss after her father's death
-  → (çok yoğun)
-- The book offers **profound** insights into human nature
-  → (derin anlamlı)
-- The economic crisis had a **profound** effect on global markets
-  → (köklü)
-- His **profound** understanding of the subject impressed everyone
-  → (derin)
+<ul style="text-align:left; margin-left:0; padding-left:20px;">
+  <li>The discovery had <strong>profound</strong> implications for modern physics
+    <br>→ (köklü)</li>
+  <li>She felt a <strong>profound</strong> sense of loss after her father's death
+    <br>→ (çok yoğun)</li>
+  <li>The book offers <strong>profound</strong> insights into human nature
+    <br>→ (derin anlamlı)</li>
+  <li>The economic crisis had a <strong>profound</strong> effect on global markets
+    <br>→ (köklü)</li>
+  <li>His <strong>profound</strong> understanding of the subject impressed everyone
+    <br>→ (derin)</li>
+</ul>
+</div>
 
 Example 4:
 Input word: "scrutinize"
 
-scrutinize (*v.*)
-- To examine or inspect closely and thoroughly
-- To observe or study something carefully and methodically
-- To subject something to careful and critical investigation
+<div style="text-align:left;">
+scrutinize (<em>v.</em>)<br>
+<ul style="text-align:left; margin-left:0; padding-left:20px;">
+  <li>To examine or inspect closely and thoroughly</li>
+  <li>To observe or study something carefully and methodically</li>
+  <li>To subject something to careful and critical investigation</li>
+</ul>
 
----
+<hr>
 
-incelemek, tetkik etmek, mercek altına almak
+incelemek, tetkik etmek, mercek altına almak<br>
 
-- The committee will **scrutinize** every detail of the proposal
-  → (tetkik etmek)
-- Investors carefully **scrutinized** the company's financial statements
-  → (incelemek)
-- The media began to **scrutinize** the candidate's past
-  → (mercek altına almak)
-- Her work was **scrutinized** by a panel of experts
-  → (incelemek)
-- We need to **scrutinize** these results before drawing any conclusions
-  → (tetkik etmek)
+<ul style="text-align:left; margin-left:0; padding-left:20px;">
+  <li>The committee will <strong>scrutinize</strong> every detail of the proposal
+    <br>→ (tetkik etmek)</li>
+  <li>Investors carefully <strong>scrutinized</strong> the company's financial statements
+    <br>→ (incelemek)</li>
+  <li>The media began to <strong>scrutinize</strong> the candidate's past
+    <br>→ (mercek altına almak)</li>
+  <li>Her work was <strong>scrutinized</strong> by a panel of experts
+    <br>→ (incelemek)</li>
+  <li>We need to <strong>scrutinize</strong> these results before drawing any conclusions
+    <br>→ (tetkik etmek)</li>
+</ul>
+</div>
 
 Example 5:
 Input word: "arbitrary"
 
-arbitrary (*adj.*)
-- Based on random choice or personal whim, rather than any reason or system
-- Determined by individual discretion or judgment, not fixed by law
-- Having no logical or orderly relationship to anything else
+<div style="text-align:left;">
+arbitrary (<em>adj.</em>)<br>
+<ul style="text-align:left; margin-left:0; padding-left:20px;">
+  <li>Based on random choice or personal whim, rather than any reason or system</li>
+  <li>Determined by individual discretion or judgment, not fixed by law</li>
+  <li>Having no logical or orderly relationship to anything else</li>
+</ul>
 
----
+<hr>
 
-keyfi, rastgele, gelişigüzel, dayanaksız
+keyfi, rastgele, gelişigüzel, dayanaksız<br>
 
-- The decision to cut funding seemed completely **arbitrary**
-  → (keyfi)
-- The system assigns **arbitrary** numbers to each participant
-  → (rastgele)
-- We must prevent **arbitrary** enforcement of the rules
-  → (gelişigüzel)
-- The deadlines aren't **arbitrary** - they serve a specific purpose
-  → (dayanaksız)
-- The judge ruled that the policy was **arbitrary** and capricious
-  → (keyfi)
+<ul style="text-align:left; margin-left:0; padding-left:20px;">
+  <li>The decision to cut funding seemed completely <strong>arbitrary</strong>
+    <br>→ (keyfi)</li>
+  <li>The system assigns <strong>arbitrary</strong> numbers to each participant
+    <br>→ (rastgele)</li>
+  <li>We must prevent <strong>arbitrary</strong> enforcement of the rules
+    <br>→ (gelişigüzel)</li>
+  <li>The deadlines aren't <strong>arbitrary</strong> - they serve a specific purpose
+    <br>→ (dayanaksız)</li>
+  <li>The judge ruled that the policy was <strong>arbitrary</strong> and capricious
+    <br>→ (keyfi)</li>
+</ul>
+</div>
 
 

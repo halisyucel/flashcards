@@ -16,36 +16,35 @@ export const create_flashcard = {
   type: "function",
   function: {
     name: "create_flashcard",
-    description: "creates a flashcard with english definitions and turkish translations without markdown headers",
+    description: "creates a flashcard with separate front and back content for Anki",
     parameters: {
       type: "object",
       properties: {
-        definition: {
+        front: {
           type: "string",
-          description: "english definitions section including word type, main definitions, extended meanings and usage notes without markdown headers"
+          description: "front side of the card containing only the word and part of speech (e.g., 'demarcation (n.)')"
         },
-        translation: {
+        back: {
           type: "string",
-          description: "turkish translations section including translations list and example sentences with their corresponding turkish meanings without markdown headers"
+          description: "back side of the card containing all the definitions, extended meanings, usage notes, translations, and example sentences in HTML format"
         }
       },
-      required: ["definition", "translation"],
+      required: ["front", "back"],
       additionalProperties: false
     }
   }
 } as const;
 
-
 export function extractResultFromResponse(response: ChatCompletion): {
-  definition: string;
-  translation: string;
+  front: string;
+  back: string;
 } {
   const toolCall = response.choices[0].message.tool_calls?.[0];
   if (toolCall?.function.name === 'create_flashcard' && toolCall.function.arguments) {
     const args = JSON.parse(toolCall.function.arguments);
     return {
-      definition: args.definition,
-      translation: args.translation
+      front: `<div style="text-align:left;">${args.front}</div>`,
+      back: `<div style="text-align:left;">${args.back}</div>`
     };
   }
 
